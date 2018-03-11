@@ -12,13 +12,13 @@ import { Jumbotron } from 'react-bootstrap'
 
 import Username from './components/Username'
 import List from './components/List'
+import Information from './components/Information'
 
 import { getAllByMAL } from './lib/anilist'
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
-function Event ({ event: { title, start, end } }) {
-
+const Event = ({ event: { title, start, end } }) => {
   return (
     <Tooltip title={`${moment(start).format('LT')} - ${moment(end).format('LT')}: ${title}`}>
       {title}
@@ -65,7 +65,7 @@ class App extends Component {
       <Fragment>
         <Jumbotron>
           <div className='container'>
-            <h1>AniCal</h1>
+            <h1>AniCal <Information /></h1>
             <p>By: <a href='https://thedestruc7i0n.ca' target='_blank' rel='noopener noreferrer'>TheDestruc7i0n</a></p>
           </div>
         </Jumbotron>
