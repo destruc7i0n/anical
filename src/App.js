@@ -3,16 +3,28 @@ import React, { Component, Fragment } from 'react'
 import BigCalendar from 'react-big-calendar'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 
+import { Tooltip } from 'react-tippy'
+import 'react-tippy/dist/tippy.css'
+
 import moment from 'moment'
 
 import { Jumbotron } from 'react-bootstrap'
 
-import Username from './Username'
-import List from './List'
+import Username from './components/Username'
+import List from './components/List'
 
 import { getAllByMAL } from './lib/anilist'
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
+
+function Event ({ event: { title, start, end } }) {
+
+  return (
+    <Tooltip title={`${moment(start).format('LT')} - ${moment(end).format('LT')}: ${title}`}>
+      {title}
+    </Tooltip>
+  )
+}
 
 class App extends Component {
   constructor (props) {
@@ -68,6 +80,9 @@ class App extends Component {
               events={calendarData}
               views={['month', 'week', 'day']}
               defaultDate={new Date()}
+              components={{
+                event: Event
+              }}
             />
           </div>
         </div>
