@@ -30,7 +30,7 @@ class Information extends Component {
             This tool is powered by{' '}
             <a href='https://anilist.co' target='_blank' rel='noopener noreferrer'>AniList</a>
             {' '}and{' '}
-            <a href='https://github.com/TimboKZ/kuristina' target='_blank' rel='noopener noreferrer'>Kurstina</a>.
+            <a href='https://github.com/TimboKZ/kuristina' target='_blank' rel='noopener noreferrer'>Kuristina</a>.
             <br />
             Unless you have a large watching list of anime that are still releasing (over ~90), you shouldn't really have any problems. If you have more, you may hit some rate limits.
           </Modal.Body>

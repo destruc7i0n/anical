@@ -16,8 +16,11 @@ import Information from './components/Information'
 
 import { getAllByMAL } from './lib/anilist'
 
+import './App.css'
+
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
+// event component with tooltip
 const Event = ({ event: { title, start, end } }) => {
   return (
     <Tooltip title={`${moment(start).format('LT')} - ${moment(end).format('LT')}: ${title}`}>
